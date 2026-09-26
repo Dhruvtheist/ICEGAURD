@@ -45,7 +45,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
           <div>
             <div className="flex items-center gap-2">
               <span className="font-mono font-black text-xl tracking-widest text-white leading-none">
-                ICEGUARD
+                polarEye
               </span>
               <span className="px-1.5 py-0.5 text-[9px] font-mono font-bold bg-ice-cyan/15 text-ice-neon border border-ice-cyan/40 rounded">
                 OPERATIONAL
@@ -117,7 +117,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
         <div className="max-w-3xl w-full p-6 sm:p-8 rounded-lg bg-polar-900/80 border border-polar-700/80 text-left font-mono text-xs sm:text-sm text-slate-300 space-y-3 shadow-2xl relative overflow-hidden backdrop-blur-md">
           <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-cyan-400 to-blue-600" />
           <div className="text-[11px] uppercase tracking-widest text-ice-neon font-bold">
-            The ICEGUARD Core Philosophy
+            The polarEye Core Philosophy
           </div>
           <p className="text-white text-base sm:text-lg font-medium font-sans">
             "We don't just show where the ice is."
@@ -164,7 +164,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
 
       {/* Footer */}
       <footer className="relative z-10 w-full px-6 py-4 border-t border-polar-800/80 flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-slate-500 gap-2 backdrop-blur-md bg-polar-950/60">
-        <div>ICEGUARD • Polar Class PC-6 Decision Support System</div>
+        <div>polarEye • Polar Class PC-6 Decision Support System</div>
         <div>Active Sector: Antarctic Peninsula • Rothera Station Corridor</div>
       </footer>
     </div>

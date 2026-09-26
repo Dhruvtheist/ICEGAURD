@@ -1,4 +1,4 @@
-# ICEGUARD
+# polarEye
 ### AI Predictive Antarctic Navigation & Ice Risk Intelligence System
 
 An operational navigation decision-support platform engineered for vessels navigating high-latitude Antarctic waters.

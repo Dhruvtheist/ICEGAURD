@@ -1,6 +1,6 @@
-# ICEGUARD — Technical Architecture, Stack & Workflow Specification
+# polarEye — Technical Architecture, Stack & Workflow Specification
 
-> **System Name**: ICEGUARD  
+> **System Name**: polarEye  
 > **Sub-Title**: AI Predictive Antarctic Navigation & Ice Risk Intelligence System  
 > **Target Environment**: High-Latitude Polar Maritime Operations (Antarctic Peninsula / Rothera Station Corridor)  
 > **Standard Compliance**: IMO Polar Code & POLARIS (MSC.1/Circ.1519) Methodology  
@@ -12,12 +12,12 @@
 
 Traditional polar navigation tools operate reactively: they display where ice floes and icebergs were observed at the moment of the last satellite pass. In fast-moving polar environments, this snapshot approach is dangerous because ice moves, currents drift, and floes compress under gale-force winds.
 
-**ICEGUARD introduces a Time-Aware Dynamic Ice Risk Field**:
-Instead of static maps, ICEGUARD divides the Antarctic ocean into a spatial grid and continuously calculates evolving dynamic risk scores for every cell. It fuses the standardized **IMO POLARIS / RIO vessel capability baseline** with kinetic 4D factors (iceberg trajectories, wind drift, wave compression, and dead reckoning) to project risk at the **exact moment the vessel will arrive**.
+**polarEye introduces a Time-Aware Dynamic Ice Risk Field**:
+Instead of static maps, polarEye divides the Antarctic ocean into a spatial grid and continuously calculates evolving dynamic risk scores for every cell. It fuses the standardized **IMO POLARIS / RIO vessel capability baseline** with kinetic 4D factors (iceberg trajectories, wind drift, wave compression, and dead reckoning) to project risk at the **exact moment the vessel will arrive**.
 
 Furthermore, it answers the commanding officer’s most critical question:
 > *"How far can I safely continue before I lose the ability to retreat?"*  
-> ICEGUARD evaluates escape corridors at every waypoint and computes the **LAST SAFE TURN-BACK POINT** before the ship gets trapped.
+> polarEye evaluates escape corridors at every waypoint and computes the **LAST SAFE TURN-BACK POINT** before the ship gets trapped.
 
 ---
 
@@ -37,7 +37,7 @@ Furthermore, it answers the commanding officer’s most critical question:
 ```
 
 ### 2.1 Frontend Technologies
-| Technology | Version / Spec | Purpose in ICEGUARD |
+| Technology | Version / Spec | Purpose in polarEye |
 | :--- | :--- | :--- |
 | **React** | `^18.3.1` | Component-driven reactive UI architecture managing vessel telemetry, HUD popups, route evaluation, and demo mode. |
 | **TypeScript** | `~5.9.3` | Type safety across nautical coordinates, vessel specifications, 4D trajectory nodes, and POLARIS/RIO status enums. |
@@ -49,7 +49,7 @@ Furthermore, it answers the commanding officer’s most critical question:
 | **Recharts** | `^2.15.1` | Time-series data visualization for telemetry progression and Monte Carlo retreat simulation curves. |
 
 ### 2.2 Backend Technologies
-| Technology | Version / Spec | Purpose in ICEGUARD |
+| Technology | Version / Spec | Purpose in polarEye |
 | :--- | :--- | :--- |
 | **Python** | `3.14.3` | Core algorithmic and simulation runtime. |
 | **FastAPI** | `^0.141.1` | Asynchronous microframework exposing REST endpoints for grid calculations, iceberg tracking, and route evaluations. |
@@ -58,7 +58,7 @@ Furthermore, it answers the commanding officer’s most critical question:
 | **Pydantic** | `^2.13.5` | Data modeling, validation, and JSON serialization. |
 
 ### 2.3 Resilient Dual-Mode Architecture
-ICEGUARD features an autonomous client-side simulation engine inside `polarDataService.ts`. While the application automatically connects to the FastAPI backend and WebSocket streaming service, if the backend is starting up or disconnected, the frontend seamlessly transitions to its built-in mathematical engine with **zero interruption, zero configuration, and zero errors**.
+polarEye features an autonomous client-side simulation engine inside `polarDataService.ts`. While the application automatically connects to the FastAPI backend and WebSocket streaming service, if the backend is starting up or disconnected, the frontend seamlessly transitions to its built-in mathematical engine with **zero interruption, zero configuration, and zero errors**.
 
 ---
 
@@ -151,7 +151,7 @@ The system executes a **7-stage intelligence pipeline**:
 4. *Output*: A standardized, vessel-specific regulatory baseline.
 
 ### Stage 2: 4D Kinetic Fusion & Arrival Time Horizon
-1. Static regulatory indices cannot predict dynamic hazards. ICEGUARD fuses kinetic forces onto the RIO baseline:
+1. Static regulatory indices cannot predict dynamic hazards. polarEye fuses kinetic forces onto the RIO baseline:
    - **Iceberg Velocity**: Velocity vectors (e.g. `ANT-042`: 0.42 m/s @ 043°) with 95% expanding uncertainty cones.
    - **Ocean Currents & Gale Winds**: 32-knot gale winds pushing ice pack northeastward into navigational bottlenecks.
    - **Vessel Kinematics**: Speed (12.4 knots), heading (038°), and computed arrival times at each waypoint.

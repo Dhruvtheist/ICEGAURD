@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 app = FastAPI(
-    title="ICEGUARD AI Navigation Backend",
+    title="polarEye AI Navigation Backend",
     description="Operational Antarctic Ice Risk Intelligence & Telemetry API with IMO POLARIS Integration",
     version="1.1.0"
 )
@@ -356,7 +356,7 @@ def get_risk_level(score: int) -> str:
 @app.get("/api/status")
 def get_system_status():
     return {
-        "system": "ICEGUARD AI Navigation & Ice Risk Intelligence",
+        "system": "polarEye AI Navigation & Ice Risk Intelligence",
         "status": "ONLINE",
         "mode": "OPERATIONAL / LIVE SIMULATION",
         "projection": "EPSG:3031 Antarctic Polar Stereographic",

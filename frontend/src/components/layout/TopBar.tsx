@@ -73,7 +73,7 @@ export const TopBar: React.FC<TopBarProps> = ({
           <div className="text-left">
             <div className="flex items-center gap-2">
               <span className="font-bold text-base tracking-tight text-slate-900 leading-none">
-                ICEGUARD
+                polarEye
               </span>
               <span className="px-1.5 py-0.5 text-[10px] font-semibold bg-blue-50 text-blue-700 rounded-full border border-blue-200">
                 AI Navigation
